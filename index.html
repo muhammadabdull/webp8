@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <script src="main.js"></script>
+   <link rel="stylesheet" href="style.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Reaper</title>
+</head>
+<body>
+    <div class="container">
+        <div class="transition">
+          <div class="cover cover1"></div>
+          <div class="cover cover2"></div>
+          <div class="cover cover3"></div>
+        </div>
+   <div class="main">
+       <div class="navbackground"></div>
+       <div class="navbar">
+           <div class="icon">
+               <h2 class="logo">Reaper!</h2>
+           </div>
+           <div class="menu">
+               <ul>
+                   <li><a href="index.html">Home</a></li>
+                   <li><a href="information.html">Information</a></li>
+                   <li><a href="childhood.html">Childhood</a></li>
+                   <li><a href="important.html">Important People</a></li>
+               </ul>
+           </div>
+           <div class="search">
+               <input class="srch" type="text" id="search" value='' placeholder="Search"></input>
+               <button class="btn" onClick="search(id)" id="button">Search</button>
+           </div>
+       </div>
+       <div class="content">
+
+        
+           <h1>The life about<br><span> Reaper</span></h1>
+           <p class="par" id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cum dolore et quae debitis doloribus unde id? Magnam minus illo atque odio, blanditiis placeat vitae nobis incidunt praesentium voluptate id.</p>
+               <button class="cn"><a href="./index.html">Learn more!</a></button>
+ 
+               </div>
+
+               <script type="text/javascript">
+                function search(e) {
+	let searched = document.getElementById("search").value.trim();
+  if (searched !== "") {
+  	let text = document.getElementById("text").innerHTML;
+  	let re = new RegExp(searched,"g"); // search for all instances
+		let newText = text.replace(re, `<mark>${searched}</mark>`);
+		document.getElementById("text").innerHTML = newText;
+  }
+}
+               </script>
+
+<script>
+    const link = document.querySelector(".cn");
+const transition = document.querySelector(".transition");
+link.addEventListener("click", (e) => {
+e.preventDefault();
+transition.classList.add("slide");
+setTimeout(() => {
+    window.location = "./information.html";
+}, 3600);
+});
+  </script>
+            
+</body>
+</html>
+
